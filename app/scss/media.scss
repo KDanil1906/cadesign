@@ -1,0 +1,944 @@
+@import 'vars';
+
+
+@media (max-width: 1398px) {
+
+    .services__title {
+        margin-bottom: 77px;
+    }
+
+    .positions__slider {
+        background-color: #fff;
+        margin-bottom: 86px;
+    }
+
+    .positions__slider-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .slider-item__text {
+        order: 2;
+        width: 100%;
+        padding: 0;
+        padding-top: 50px;
+        // padding-bottom: 86px;
+        text-align: center;
+    }
+
+    .slider-item__name {
+        span {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .stories__inner {
+        .slick-dots {
+            margin-top: 7px;
+        }
+
+        .slider-item__name {
+            span {
+                margin-top: 14px;
+                margin-bottom: 36px;
+            }
+        }
+    }
+
+    .positions__slider .prev-slide {
+        left: 32px;
+        z-index: 3;
+        top: 268px;
+    }
+
+    .positions__slider .next-slide {
+        right: 32px;
+        z-index: 3;
+        top: 268px;
+
+    }
+
+    .slider-item__photo {
+        order: -1;
+        position: static;
+        background-color: #F7F7F7;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 1223px) {
+    .vacancies__item {
+        padding: 67px 36.25px 64px 36.25px;
+        width: 328.5px;
+    }
+
+
+    .video-fluid {
+        height: 440px;
+    }
+
+    .services__wrapper {
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+    }
+
+    .services__wrapper-item:hover {
+        box-shadow: none;
+    }
+
+    .wrapper-item__button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        min-height: 100%;
+        opacity: 0;
+
+        a {
+            width: 100%;
+            min-height: 164px;
+            padding: 0;
+        }
+    }
+
+    .wrapper-item__image {
+        margin-bottom: 39px;
+    }
+
+    .services__wrapper-item {
+        width: auto;
+        padding: 0;
+        height: 164px;
+        position: relative;
+    }
+
+    .wrapper-item__title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+
+    .benefits__items {
+        width: 690px;
+        margin: 0 auto;
+    }
+
+    .benefits {
+        margin-bottom: 61px;
+
+        .slick-list {
+            overflow: hidden;
+        }
+
+        .slick-track {
+            max-width: 30000px;
+        }
+
+        .slick-slide {
+            width: 345px;
+            height: 345px;
+        }
+
+        .benefits__item {
+            width: 345px;
+            height: 345px;
+        }
+
+    }
+
+
+
+    .benefits__items {
+        display: block;
+    }
+
+    .benefits__item {
+        // display: flex !important;
+        background-color: #fff;
+
+        &:hover {
+            filter: drop-shadow(0px 4px 52px rgba(0, 0, 0, 0.13));
+        }
+    }
+
+
+
+    .slick-slide.slick-current .benefits__item {
+        width: 345px;
+    }
+
+}
+
+@media (max-width: 1230px) {
+    .our-values__items {
+        overflow-x: scroll;
+        // width: 503px;
+        width: 100%;
+    }
+
+    .our-values__item {
+        min-width: 376px;
+        margin-bottom: 76px;
+    }
+}
+
+@media (max-width: 1222px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .header__links-page+.header__links-page {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1164px) {
+    .student-questionnaire__inner {
+        padding: 86px 0 64px 0;
+    }
+
+    .student-questionnaire__items {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 19px;
+    }
+
+    .student-questionnaire__item {
+        width: 50%;
+        margin-bottom: 60px;
+    }
+
+    .questionnaire-item__decs {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 1147px) {
+    .our-values__title {
+        padding-top: 53px;
+        margin-bottom: 50px;
+    }
+
+    .slider-item__photo {
+
+        img {
+            width: 378px;
+        }
+    }
+
+    .positions__slider .prev-slide,
+    .positions__slider .next-slide {
+        top: 220px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .vacancies__switcher-choice {
+        width: 247px;
+        text-align: center;
+    }
+
+    .vacancies__switcher-all {
+        text-align: left;
+    }
+
+    .vacancies__inner {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .vacancies__items {
+        width: 690px;
+    }
+
+    .vacancies__item {
+        margin-left: 0;
+        position: relative;
+        height: 310px;
+        padding: 38px 36.25px 64px 36.25px;
+    }
+
+    .vacancies__item__button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    .vacancies__item:first-child,
+    .vacancies__item:nth-child(4n) {
+        margin-left: 0px;
+    }
+
+    .vacancies__item:nth-child(2n) {
+        margin-left: 32px;
+    }
+
+    .vacancies__title {
+        text-align: center;
+        width: 100%;
+    }
+
+    .vacancies__more-jobs {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 1006px) {
+    .header__links {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $blue;
+        width: 100%;
+        height: auto;
+        padding: 0 40px;
+        padding-bottom: 53px;
+        display: none;
+        z-index: 2;
+    }
+
+    .header__links-social {
+        display: none;
+    }
+
+    .header__links-pages {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 60px;
+    }
+
+    .header__links-page+.header__links-page {
+        margin-left: 0;
+        margin-top: 39px;
+    }
+
+    .header__links-page+.header__links-page {
+        height: auto;
+    }
+
+    .header__links-page--active {
+
+        a {
+            color: #187CD3;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .header__links-page {
+        height: auto;
+        color: #fff;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .header__links-close {
+        display: block;
+    }
+
+    .header__links-social {
+        display: block;
+        margin-left: 0;
+
+
+        span {
+            display: none;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .links-social__items {
+        display: block;
+        position: static;
+
+    }
+
+    .links-social__items {
+        width: 240px;
+        max-height: auto;
+        padding: 0;
+        box-shadow: none;
+        z-index: 2;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+    }
+
+    .links-social__item {
+        width: 48px;
+        height: 35px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        &:hover {
+            border: 1px solid #E0E0E0;
+        }
+
+        &+.links-social__item {
+            margin-left: 16px;
+        }
+
+        a {
+
+            svg {
+                fill: #fff;
+
+                &:hover {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+    .header {
+        height: 96px;
+        margin-bottom: 0;
+    }
+
+    .header__burger-btn {
+        display: block;
+    }
+
+    .welcome__inner {
+        height: 398px;
+        position: relative;
+    }
+
+    .welcome_image {
+        width: 527px;
+        height: 334px;
+        position: absolute;
+        right: -136px;
+        bottom: 0;
+    }
+
+    .welcome {
+        background-position: top;
+        margin-top: 96px;
+    }
+}
+
+
+@media (max-width: 978px) {
+    .student-questionnaire {
+        margin-bottom: 60px;
+    }
+
+    .stories__title {
+        &::before {
+            width: 85%;
+        }
+    }
+
+    .stories {
+        padding: 0 40px;
+    }
+
+    .slider-item__image {
+        order: 0;
+        position: static;
+        bottom: none;
+        right: none;
+        z-index: 1;
+        width: 112px;
+        height: 112px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #F9F9F9;
+        margin: 0 auto;
+        margin-bottom: 49px;
+
+        img {
+            width: 117%;
+        }
+    }
+
+    .slider-item__text-info {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .stories__slider-item {
+        flex-wrap: wrap;
+        padding: 60px 0 87px 0;
+        position: relative;
+    }
+
+    .stories__inner {
+        height: 529px;
+
+        .container {
+            padding: 0 31px;
+        }
+
+
+        .slick-dots {
+            margin-top: 0px;
+            position: absolute;
+            bottom: 56px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        &::after {
+            display: none;
+        }
+
+        .slider-item__name {
+            span {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .slider-item__link {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 934px) {
+    .slider-item__name {
+        font-size: 28px;
+        line-height: 28px;
+
+        span {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+    .slider-item__comment {
+        font-size: 18px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 808px) {
+    .welcome__info-title {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .stories__title {
+        &::before {
+            width: 80%;
+        }
+    }
+
+}
+
+
+@media (max-width: 769px) {
+    .vacancies__item:nth-child(2n) {
+        margin-left: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .stories {
+        margin-bottom: 95px;
+    }
+
+    .top-contacts__image {
+        display: none;
+    }
+
+    .footer__top {
+        padding: 74px 0 66px 0;
+    }
+
+    .top-contacts__desc {
+        margin: 0;
+        margin-bottom: 19px;
+    }
+
+    .contacts__link-phone {
+        font-size: 56px;
+        line-height: 70px;
+        margin-bottom: 22px;
+    }
+
+    .footer__top-button {
+        margin-bottom: 49px;
+    }
+
+    .footer__top {
+        height: auto;
+        background-color: #F7F7F7;
+        background-image: none;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .stories {
+        margin-bottom: 95px;
+    }
+
+    .benefits {
+        display: none;
+    }
+
+    .positions__slider-wrapper {
+        .slick-dots {
+            margin-top: 0;
+        }
+    }
+
+    .slider-item__text {
+        padding-bottom: 34px;
+    }
+
+    .slider-item__name {
+        font-size: 20px;
+        line-height: 28px;
+
+        span {
+            font-size: 13px;
+            line-height: 28px;
+        }
+    }
+
+    .slider-item__comment {
+        font-size: 13px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 766px) {
+
+    .vacancies__item-name {
+        margin-bottom: 17px;
+        width: 205px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .vacancies__item-price {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .vacancies {
+        .container {
+            padding: 0;
+        }
+    }
+
+    .vacancies__items {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .vacancies__item {
+        width: 100%;
+        margin-bottom: 0;
+        height: 139px;
+        padding: 33px 20px 33px 20px;
+        text-align: left;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 26px;
+            top: 50%;
+            transform: translate(-50%);
+            background-image: url(../images/svg_sprite/sprite.svg#arrow_slide);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 6px;
+            height: 10px;
+        }
+    }
+
+    .vacancies__item-image {
+        display: none;
+    }
+
+    .vacancies__item:nth-child(2n) {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 728px) {
+    .video-fluid__play {
+        width: 56px;
+        height: 56px;
+        top: calc(50% + 6px);
+
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    .video-fluid {
+        height: 207px;
+    }
+
+    .welcome__info-title {
+        width: 281px;
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .welcome__info {
+        width: 300px;
+    }
+
+    .welcome__inner {
+        height: 318px;
+    }
+
+    .welcome_image {
+        width: 430px;
+        height: auto;
+        bottom: -4px;
+    }
+}
+
+@media (max-width: 708px) {
+    .student-questionnaire {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 652px) {
+    .services {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 638px) {
+
+    .stories {
+        padding: 0 20px;
+    }
+
+    .stories__inner {
+        height: 309px;
+
+        .slick-dots {
+            bottom: 38px;
+        }
+    }
+
+    .stories__slider-item {
+        padding: 30px 0;
+        height: 309px;
+        justify-content: flex-start;
+        flex-direction: column;
+
+    }
+
+    .slider-item__link {
+        height: auto;
+        opacity: 1;
+        position: static;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .slider-item__desc {
+        display: none;
+    }
+
+    .slider-item__image {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 29px;
+
+        img {}
+    }
+
+    .stories__title {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 32px;
+    }
+
+    .stories__inner .slider-item__name span {
+        margin-top: 3px;
+        margin-bottom: 0;
+    }
+}
+
+
+@media (max-width: 604px) {
+    .welcome_image {
+        width: 360px;
+    }
+}
+
+@media (max-width: 557px) {
+
+    .header,
+    .header__inner {
+        height: 72px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .header__logo {
+        height: 25px;
+    }
+
+    .welcome {
+        background-position: left;
+        margin-top: 72px;
+    }
+
+    .welcome_image {
+        width: 322px;
+        height: auto;
+        bottom: -4px;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 0;
+    }
+
+    .welcome__info {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        padding-top: 24px;
+        padding-bottom: 38px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .welcome__inner {
+        align-items: flex-start;
+    }
+
+    .welcome__info-title {
+        margin: 0 auto;
+        margin-bottom: 148px;
+    }
+}
+
+@media (max-width: 516px) {
+    .footer__bottom-copyright {
+        padding-top: 20px;
+    }
+
+    .footer__bottom {
+        padding: 0 47px;
+        height: 150px;
+    }
+
+    .footer__bottom-privacy {
+        font-size: 11px;
+        line-height: 14px;
+        margin-bottom: 25px;
+    }
+
+    .stories {
+        margin-bottom: 95px;
+    }
+
+    .footer__top {
+        padding: 38px 0;
+    }
+
+    .top-contacts__desc {
+        margin-bottom: 15px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .contacts__link-phone {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .contacts__link-email {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .footer__top-button {
+        button {
+            width: 223px;
+            height: 56px;
+            padding: 10px;
+        }
+    }
+
+    .footer__top {
+        height: auto;
+        background-color: #F7F7F7;
+        background-image: none;
+    }
+
+    .top-social__wrapper {
+        width: 223px;
+
+        .top-social__item {
+            width: 47.8px;
+            height: 35.2px;
+
+        }
+    }
+
+    .top-social__item-vk {
+        width: 14px;
+    }
+
+    .top-social__item-odoclassniki {
+        width: 8px;
+    }
+
+    .top-social__item-facebook {
+        width: 13.3px;
+        margin-bottom: 6px;
+    }
+
+    .top-social__item-insta {
+        width: 10.5px;
+    }
+}
+
+@media (max-width: 508px) {
+    .slider-item__photo {
+
+        img {
+            width: 190px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+$gray: #F2F2F2;
+$gray2: #4F4F4F;
+$orange: #E9862A;
+$blue: #003264;
+$dark: #242627;
+
+@mixin f400 {
+    font-family: 'HeliosC', sans-serif;
+    font-weight: 400;
+}
+
+@mixin f500 {
+    font-family: 'Gilroy-Medium', sans-serif;
+    font-weight: 500;
+}
+
+@mixin f700 {
+    font-family: 'HeliosC-Bold', sans-serif;
+    font-weight: 700;
+}
+
+@mixin  shadow {
+    filter: drop-shadow(0px 4px 52px rgba(0, 0, 0, 0.13));
+}
+
+@mixin process_animation {
+    animation: process  5s infinite linear;
+}
+
+@keyframes process {
+    from {width: 1%;}
+    to {width: 100%;}
+    }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/libs.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+    <link rel="stylesheet" href="./css/media.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="form-feedback">
+        <div class="form-feedback__close">
+            <svg class="top-social__item-insta">
+                <use xlink:href="./images/svg_sprite/sprite.svg#close1"></use>
+            </svg>
+        </div>
+        <div class="form-feedback__inner">
+            <div class="form-feedback__title">Отклик на вакансию</div>
+            <form class="form-feedback__form">
+                <div class="form-feedback__input form-feedback__input-job">
+                    <input type="text" required placeholder="">
+                    <label>Желаемая вакансия *</label>
+                    <span class="input-error"></span>
+                </div>
+                <div class="form-feedback__input form-feedback__input-name form-feedback__input--error">
+                    <input  type="text" required placeholder="">
+                    <label>Фамилия, имя и отчество *</label>
+                    <span class="input-error">Введите фамилию, имя и отчество через пробел (Например: Иванов Петр Алексеевич)</span>
+                </div>
+                <div class="form-feedback__input form-feedback__input-phone">
+                    <input type="tel" required placeholder="">
+                    <label>Мобильный телефон*</label>
+                    <span class="input-error"></span>
+                </div>
+                <div class="form-feedback__input form-feedback__input-email">
+                    <input  type="email" placeholder="">
+                    <label>E-mail</label>
+                    <span class="input-error"></span>
+                </div>
+                <div class="form-feedback__input form-feedback__input-education">
+                    <input type="tel" required placeholder="">
+                    <label>Образование *</label>
+                    <span class="input-error"></span>
+                </div>
+                <div class="form-feedback__input form-feedback__input-address">
+                    <input  type="text" required placeholder="">
+                    <label>Адрес места жительства *</label>
+                    <span class="input-error"></span>
+                </div>
+                <div class="form-feedback__input form-feedback__input-date">
+                    <input  type="date" placeholder="">
+                    <label>Дата рождения</label>
+                    <span class="input-error"></span>
+                </div>
+                <div class="form-feedback__input-file">
+                    <input type="file" data-browse="Загрузить резюме" data-placeholder="">
+                    <span class="input-error"></span>
+                    <label></label>
+                </div>
+                <div class="form-feedback__input form-feedback__input-comment">
+                    <textarea  required placeholder="" ></textarea>
+                    <label>Комментарий</label>
+                    <span class="input-error"></span>
+                </div>
+                
+                <div class="form-feedback__form-button">
+                    <div class="form-button__checkbox">
+                        <input type="checkbox" class="form-feedback__input-agreement"><span>Я принимаю условия <a
+                                href="#">передачи информации</a></span>
+                    </div>
+
+                    <button class="form-button__button ">
+                        Отправить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/libs.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

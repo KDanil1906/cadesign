@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;
+}
+
+html.fade {
+  background: rgba(36, 38, 39, 0.84);
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  // Общепринятые правила для скрола на мелких экаранах 
+  overflow-x: hidden;
+  min-width: 320px;
+  @include f400;
+  background-color: #fff;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.container {
+  max-width: 1194px;
+  // padding: 0 15px;
+  margin: 0 auto;
+}
+
+// .container-fluid {
+// max-width: 1480px;
+// }
+
+
+.button {
+  button {
+    @include f700;
+    background-color: $orange;
+    padding: 22px;
+    color: #fff;
+    border: none;
+
+    &:hover {
+      background-color: #E77E1E;
+    }
+  }
+}
+
+.slick-dots {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+
+  li {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #E0E0E0;
+
+      button {
+          border: none;
+          background-color: transparent;
+          color: transparent;
+      }
+
+      &.slick-active {
+          background-color: $orange;
+      }
+
+      &+li {
+          margin-left: 41px;
+      }
+  }
+}
