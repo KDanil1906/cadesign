@@ -20,6 +20,7 @@
     "gulp-webp": "^4.0.1",
     "jquery": "^3.6.0",
     "jquery-form-styler": "^2.0.2",
+    "jquery-validation": "^1.19.5",
     "magnific-popup": "^1.1.0",
     "node-sass": "^7.0.1",
     "normalize.css": "^8.0.1",
@@ -27,6 +28,8 @@
     "slick-carousel": "^1.8.1"
   },
   "dependencies": {
-    "gulp-svg-sprite": "^1.5.0"
+    "gulp-svg-sprite": "^1.5.0",
+    "jquery.maskedinput": "^1.4.1",
+    "maskedinput": "^3.3.11"
   }
 }

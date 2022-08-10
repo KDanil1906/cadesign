@@ -13,8 +13,8 @@
 
 <body>
 
-    <div class="form-feedback">
-        <div class="form-feedback__close">
+    <div class="form-feedback popup-window">
+        <div class="form-feedback__close close-popup">
             <svg class="top-social__item-insta">
                 <use xlink:href="./images/svg_sprite/sprite.svg#close1"></use>
             </svg>
@@ -23,58 +23,96 @@
             <div class="form-feedback__title">Отклик на вакансию</div>
             <form class="form-feedback__form">
                 <div class="form-feedback__input form-feedback__input-job">
-                    <input type="text" required placeholder="">
+                    <input type="text" required placeholder="" name="job" onfocus="addBorderDiv(this)"
+                        onblur="removeBorderDiv(this)">
                     <label>Желаемая вакансия *</label>
-                    <span class="input-error"></span>
+                    <div class="form-feedback__input-close">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#close"></use>
+                        </svg>
+                    </div>
                 </div>
-                <div class="form-feedback__input form-feedback__input-name form-feedback__input--error">
-                    <input  type="text" required placeholder="">
+                <div class="form-feedback__input form-feedback__input-name">
+                    <input type="text" required placeholder="" name="name" onfocus="addBorderDiv(this)"
+                        onblur="removeBorderDiv(this)">
                     <label>Фамилия, имя и отчество *</label>
-                    <span class="input-error">Введите фамилию, имя и отчество через пробел (Например: Иванов Петр Алексеевич)</span>
+                    <div class="form-feedback__input-close">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#close"></use>
+                        </svg>
+                    </div>
                 </div>
                 <div class="form-feedback__input form-feedback__input-phone">
-                    <input type="tel" required placeholder="">
+                    <input type="tel" required placeholder="" name="phone" onfocus="addBorderDiv(this)"
+                        onblur="removeBorderDiv(this)">
                     <label>Мобильный телефон*</label>
-                    <span class="input-error"></span>
+                    <div class="form-feedback__input-close">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#close"></use>
+                        </svg>
+                    </div>
                 </div>
                 <div class="form-feedback__input form-feedback__input-email">
-                    <input  type="email" placeholder="">
+                    <input type="email" placeholder="" name="email" onfocus="addBorderDiv(this)"
+                        onblur="removeBorderDiv(this)">
                     <label>E-mail</label>
-                    <span class="input-error"></span>
+                    <div class="form-feedback__input-close">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#close"></use>
+                        </svg>
+                    </div>
                 </div>
                 <div class="form-feedback__input form-feedback__input-education">
-                    <input type="tel" required placeholder="">
+                    <input type="text" required placeholder="" name="education" onfocus="addBorderDiv(this)"
+                        onblur="removeBorderDiv(this)">
                     <label>Образование *</label>
-                    <span class="input-error"></span>
+                    <div class="form-feedback__input-close">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#close"></use>
+                        </svg>
+                    </div>
                 </div>
                 <div class="form-feedback__input form-feedback__input-address">
-                    <input  type="text" required placeholder="">
+                    <input type="text" required placeholder="" name="address" onfocus="addBorderDiv(this)"
+                        onblur="removeBorderDiv(this)">
                     <label>Адрес места жительства *</label>
-                    <span class="input-error"></span>
+                    <div class="form-feedback__input-close">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#close"></use>
+                        </svg>
+                    </div>
                 </div>
                 <div class="form-feedback__input form-feedback__input-date">
-                    <input  type="date" placeholder="">
+                    <input type="date" placeholder="" onfocus="addBorderDiv(this)" onblur="removeBorderDiv(this)">
                     <label>Дата рождения</label>
-                    <span class="input-error"></span>
+                    <div class="form-feedback__input-close">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#close"></use>
+                        </svg>
+                    </div>
                 </div>
                 <div class="form-feedback__input-file">
-                    <input type="file" data-browse="Загрузить резюме" data-placeholder="">
-                    <span class="input-error"></span>
+                    <input type="file" data-browse="Загрузить резюме" data-placeholder="" onfocus="addBorderDiv(this)"
+                        onblur="removeBorderDiv(this)">
+                    <div class="input-file__trash">
+                        <svg>
+                            <use xlink:href="./images/svg_sprite/sprite.svg#trash"></use>
+                        </svg>
+                    </div>
                     <label></label>
                 </div>
                 <div class="form-feedback__input form-feedback__input-comment">
-                    <textarea  required placeholder="" ></textarea>
+                    <textarea placeholder="" onfocus="addBorderDiv(this)" onblur="removeBorderDiv(this)"></textarea>
                     <label>Комментарий</label>
-                    <span class="input-error"></span>
                 </div>
-                
+
                 <div class="form-feedback__form-button">
-                    <div class="form-button__checkbox">
+                    <div class="form-button__checkbox" onclick="enabledButton();">
                         <input type="checkbox" class="form-feedback__input-agreement"><span>Я принимаю условия <a
                                 href="#">передачи информации</a></span>
                     </div>
 
-                    <button class="form-button__button ">
+                    <button class="form-button__button--disabled" type="submit">
                         Отправить
                     </button>
                 </div>

@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
 }
 
+
 html.fade {
   background: rgba(36, 38, 39, 0.84);
 }
@@ -24,6 +25,20 @@ body {
   min-width: 320px;
   @include f400;
   background-color: #fff;
+}
+
+body.mutted {
+  position: relative;
+  &::before {
+    content: '';
+    background: rgba(36, 38, 39, 0.84);
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
 }
 
 ul,
@@ -57,6 +72,7 @@ a {
     padding: 22px;
     color: #fff;
     border: none;
+    cursor: pointer;
 
     &:hover {
       background-color: #E77E1E;
