@@ -365,7 +365,7 @@
                     </label>
                     <span class="vacancies__switcher-all vacancies__switcher-choice">Все вакансии</span>
                 </div>
-                <div class="vacancies__items vacancies__items-country vacancies__items-countrynav">
+                <div class="vacancies__items vacancies__items-country">
                     <div class="vacancies__item">
                         <div class="vacancies__item-name">
                             Бухгалтер по расчету
@@ -379,8 +379,8 @@
                         <div class=" vacancies__item-price vacancies__item-price--noprice">
                             ЗП по результатам собеседоваия
                         </div>
-                        <div class="vacancies__item__button more-button">
-                            <a href="#" data-slide="0">
+                        <div class="vacancies__item-button more-button">
+                            <a href="" class="item-button__tab item-button__tab--active" data-id="country-1">
                                 <span>Подробнее</span>
                             </a>
                         </div>
@@ -398,8 +398,8 @@
                         <div class="vacancies__item-price">
                             68.000 — 80.000 руб.
                         </div>
-                        <div class="vacancies__item__button more-button">
-                            <a href="#" data-slide="1">
+                        <div class="vacancies__item-button more-button">
+                            <a href="" class="item-button__tab" data-id="country-2">
                                 <span>Подробнее</span>
                             </a>
                         </div>
@@ -419,7 +419,7 @@
                         <div class="vacancies__item-price vacancies__item-price--noprice">
                             ЗП по результатам собеседоваия
                         </div>
-                        <div class="vacancies__item__button more-button">
+                        <div class="vacancies__item-button more-button">
                             <a href="#">
                                 <span>Подробнее</span>
                             </a>
@@ -438,7 +438,7 @@
                         <div class="vacancies__item-price vacancies__item-price--noprice">
                             ЗП по результатам собеседоваия
                         </div>
-                        <div class="vacancies__item__button more-button">
+                        <div class="vacancies__item-button more-button">
                             <a href="#">
                                 <span>Подробнее</span>
                             </a>
@@ -457,7 +457,7 @@
                         <div class="vacancies__item-price vacancies__item-price--noprice">
                             ЗП по результатам собеседоваия
                         </div>
-                        <div class="vacancies__item__button more-button">
+                        <div class="vacancies__item-button more-button">
                             <a href="#">
                                 <span>Подробнее</span>
                             </a>
@@ -476,7 +476,7 @@
                         <div class="vacancies__item-price vacancies__item-price--noprice">
                             ЗП по результатам собеседоваия
                         </div>
-                        <div class="vacancies__item__button more-button">
+                        <div class="vacancies__item-button more-button">
                             <a href="#">
                                 <span>Подробнее</span>
                             </a>
@@ -495,7 +495,7 @@
                         <div class="vacancies__item-price vacancies__item-price--noprice">
                             ЗП по результатам собеседоваия
                         </div>
-                        <div class="vacancies__item__button more-button">
+                        <div class="vacancies__item-button more-button">
                             <a href="#">
                                 <span>Подробнее</span>
                             </a>
@@ -507,12 +507,22 @@
                 </div>
             </div>
         </div>
-        <div class="vacancies__jobs-slider">
+        <div class="vacancies__jobs-slider popup-wrapper">
             <div class="jobs-slider__inner">
-                <div class="jobs-slider__item">
+                <div class="jobs-slider__arrow-prev jobs-slider__arrow">
+                    <svg>
+                        <use xlink:href="./images/svg_sprite/sprite.svg#arrow_slide"></use>
+                    </svg>
+                </div>
+                <div class="jobs-slider__arrow-next jobs-slider__arrow">
+                    <svg>
+                        <use xlink:href="./images/svg_sprite/sprite.svg#arrow_slide"></use>
+                    </svg>
+                </div>
+                <div class="jobs-tab__item" id="country-1">
                     <div class="job-popup popup-window">
                         <div class="close-popup">
-                            <svg class="top-social__item-insta">
+                            <svg>
                                 <use xlink:href="./images/svg_sprite/sprite.svg#close1"></use>
                             </svg>
                         </div>
@@ -570,10 +580,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="jobs-slider__item">
+                <div class="jobs-tab__item" id="country-2">
                     <div class="job-popup popup-window">
                         <div class="close-popup">
-                            <svg class="top-social__item-insta">
+                            <svg>
                                 <use xlink:href="./images/svg_sprite/sprite.svg#close1"></use>
                             </svg>
                         </div>
@@ -686,7 +696,6 @@
     </div>
 
     <section class="stories">
-
         <div class="stories__title">
             Истории успеха
         </div>
@@ -798,9 +807,9 @@
         </div>
     </footer>
 
-    <div class="form-feedback popup-window">
+    <div class="form-feedback popup-window popup-wrapper">
         <div class="form-feedback__close close-popup">
-            <svg class="top-social__item-insta">
+            <svg>
                 <use xlink:href="./images/svg_sprite/sprite.svg#close1"></use>
             </svg>
         </div>

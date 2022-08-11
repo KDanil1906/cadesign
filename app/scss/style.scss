@@ -1314,6 +1314,10 @@
   position: relative;
 }
 
+.form-feedback {
+  display: none;
+}
+
 .form-feedback__inner {
   width: 100%;
 }
@@ -1785,6 +1789,8 @@ input:-webkit-autofill {
   svg {
     max-height: 100%;
     fill: #fff;
+    width: 12px;
+    height: 12px;
   }
 
 }
@@ -1873,3 +1879,68 @@ input:-webkit-autofill {
 }
 
 // job-popup end 
+// job popup slider start
+
+.vacancies__jobs-slider {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  width: 100%;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+}
+
+.jobs-slider__inner {
+  position: relative;
+  width: 1145px;
+  margin: 0 auto;
+}
+
+.jobs-slider__arrow {
+  width: 52px;
+  height: 94px;
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all .3s;
+  cursor: pointer;
+  display: none;
+
+  &--visible {
+    display: flex;
+  }
+
+  svg {
+    fill: #EBEBEB;
+    width: 6px;
+    height: 10px;
+  }
+
+  &:hover {
+    background-color: #242627;
+    border: 1px solid #242627;
+  }
+}
+
+.jobs-slider__arrow-prev {
+  left: -86px;
+
+  svg {
+    transform: rotate(-180deg);
+  }
+}
+
+.jobs-slider__arrow-next {
+  right: -86px;
+}
+
+// job popup slider end 

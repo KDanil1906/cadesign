@@ -2,11 +2,6 @@ html {
   box-sizing: border-box;
 }
 
-
-html.fade {
-  background: rgba(36, 38, 39, 0.84);
-}
-
 html, body {
   overflow-x: hidden;
 }
@@ -37,7 +32,7 @@ body.mutted {
     min-height: 100%;
     left: 0;
     top: 0;
-    z-index: 10;
+    z-index: 9;
   }
 }
 

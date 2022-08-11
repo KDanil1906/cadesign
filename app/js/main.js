@@ -271,26 +271,76 @@ $(function () {
 
     // jobs popup slider 
 
-    $('.jobs-slider__inner').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        fade: true,
-        asNavFor: '.vacancies__items-countrynav'
+    $('.vacancies .item-button__tab').on('click', function (item) {
+        item.preventDefault();
+        $('.vacancies__jobs-slider').addClass('vacancies__jobs-slider--show')
+        $('body').addClass('mutted');
+
+        // тут задать и передать координаты окна, прикрепить к верху
+
+        let id = $(this).attr('data-id');
+        $('.vacancies .jobs-tab__item').removeClass('jobs-tab__item-active').hide();
+        $('.vacancies .vacancies__items-country').find('.item-button__tab').removeClass('item-button__tab--active');
+        $(this).addClass('item-button__tab--active');
+        $('#' + id).addClass('jobs-tab__item-active').fadeIn();
+        // return false;
+
+        // switch-handling
+        let identifier = id.split('-')[0]
+        let country_jobs_items = document.querySelectorAll(`.jobs-tab__item[id*=${identifier}]`);
+
+        if (country_jobs_items.length > 1) {
+            $('.jobs-slider__arrow-prev, .jobs-slider__arrow-next').addClass('jobs-slider__arrow--visible');
+
+            $('.jobs-slider__arrow-prev, .jobs-slider__arrow-next').on('click', function (button) {
+                let what_if_btn = $(this).hasClass('jobs-slider__arrow-prev') ? 'prev' : 'next';
+                let active_tab_index;
+                country_jobs_items.forEach(function (item, index, array) {
+                    if ($(item).hasClass('jobs-tab__item-active')) {
+                        active_tab_index = index;
+                    };
+
+                });
+
+                if (what_if_btn === 'next') {
+                    if (active_tab_index < country_jobs_items.length - 1) {
+                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
+                        $(country_jobs_items[active_tab_index + 1]).addClass('jobs-tab__item-active').fadeIn();
+                    } else {
+                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
+                        $(country_jobs_items[0]).addClass('jobs-tab__item-active').fadeIn();
+                    }
+                } else if (what_if_btn === 'prev') {
+                    if (active_tab_index > 0) {
+                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
+                        $(country_jobs_items[active_tab_index - 1]).addClass('jobs-tab__item-active').fadeIn();
+                    } else {
+                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
+                        $(country_jobs_items[country_jobs_items.length - 1]).addClass('jobs-tab__item-active').fadeIn();
+                    }
+                }
+            });
+        }
     });
-    $('.vacancies__items-countrynav').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: '.jobs-slider__inner',
-        dots: true,
-        // centerMode: true,
-        // focusOnSelect: true
+
+    // Closing the popup window
+    $('.close-popup').on('click', function(){
+        let all_popups = document.querySelectorAll('.popup-wrapper');
+        all_popups.forEach(function(el){
+            if (window.getComputedStyle(el).display !== 'none') {
+                $(el).removeClass('vacancies__jobs-slider--show');
+                // $(this).removeClass();
+            }
+        });
+
+        $('body').removeClass('mutted');
     });
 
-    // обработка нажатия на закрытие попап
-
-
+    // click to submit to the job popup
 });
+
+
+
 
 function addBorderDiv(input) {
     $(input).parent('.form-feedback__input').addClass('form-feedback__input--focus')
