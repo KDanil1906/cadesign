@@ -71,14 +71,14 @@ $(function () {
     });
 
     // switch 
+    let choice_country = $('.vacancies__switcher-country');
+    let choice_all = $('.vacancies__switcher-all');
+    let choice_country_items = $('.vacancies__items-country');
+    let choice_all_items = $('.vacancies__items-all');
+
     $('.vacancies__items-all').fadeOut();
     $('.switch').click(function () {
         $(this).toggleClass("switchOn");
-
-        let choice_country = $('.vacancies__switcher-country');
-        let choice_all = $('.vacancies__switcher-all');
-        let choice_country_items = $('.vacancies__items-country');
-        let choice_all_items = $('.vacancies__items-all');
 
         $(choice_country).toggleClass('vacancies__switcher-choice--active');
         $(choice_country_items).fadeToggle()
@@ -88,18 +88,28 @@ $(function () {
 
     });
 
+    $('.vacancies__switcher-mobile select').on('change', function (select) {
+        $(choice_country).toggleClass('vacancies__switcher-choice--active');
+        $(choice_country_items).fadeToggle()
+
+        $(choice_all).toggleClass('vacancies__switcher-choice--active');
+        $(choice_all_items).fadeToggle()
+
+        $('.switch').toggleClass("switchOn");
+    })
+
     // click on the burger. mobile menu
     let burger_button = document.querySelector('.header__burger-btn');
     let mobile_nav = document.querySelector('.header__links');
     $(burger_button).on('click', function (item) {
         $(mobile_nav).slideToggle();
-        $('html').toggleClass('fade');
+        $('body').addClass('mutted');
     });
 
     let close_moblie_nav = document.querySelector('.header__links-close');
     $(close_moblie_nav).on('click', function () {
         $(mobile_nav).slideToggle();
-        $('html').toggleClass('fade');
+        $('body').removeClass('mutted');
     });
 
     // video
@@ -257,9 +267,18 @@ $(function () {
     });
 
     // Processing a click to delete a field content
-    $('.form-feedback__input-close, .input-file__trash').on('click', function (item) {
+    $('.input-file__trash').on('click', function () {
+        let input = $('.form-feedback__input-file input')[0];
+        input.value = null;
+        let jqfile = $(this).siblings('.jq-file')[0];
+        $(jqfile).removeClass('changed');
+        $(jqfile).find('.jq-file__name').text('');
+    });
+
+    $('.form-feedback__input-close').on('click', function (item) {
         let input = $(this).siblings('input')
         $(input).val('');
+        console.log(input);
         $(input).removeClass('not-empty')
     });
 
@@ -270,20 +289,18 @@ $(function () {
 
 
     // jobs popup slider 
-
     $('.vacancies .item-button__tab').on('click', function (item) {
         item.preventDefault();
         $('.vacancies__jobs-slider').addClass('vacancies__jobs-slider--show')
         $('body').addClass('mutted');
 
-        // тут задать и передать координаты окна, прикрепить к верху
+        $('.vacancies__jobs-slider').css('top', $(window).scrollTop())
 
         let id = $(this).attr('data-id');
         $('.vacancies .jobs-tab__item').removeClass('jobs-tab__item-active').hide();
         $('.vacancies .vacancies__items-country').find('.item-button__tab').removeClass('item-button__tab--active');
         $(this).addClass('item-button__tab--active');
         $('#' + id).addClass('jobs-tab__item-active').fadeIn();
-        // return false;
 
         // switch-handling
         let identifier = id.split('-')[0]
@@ -324,22 +341,49 @@ $(function () {
     });
 
     // Closing the popup window
-    $('.close-popup').on('click', function(){
-        let all_popups = document.querySelectorAll('.popup-wrapper');
-        all_popups.forEach(function(el){
-            if (window.getComputedStyle(el).display !== 'none') {
-                $(el).removeClass('vacancies__jobs-slider--show');
-                // $(this).removeClass();
-            }
-        });
-
-        $('body').removeClass('mutted');
+    $('.close-popup, body.mutted').on('click', function () {
+        closePopup();
     });
 
+
+    // // hide any popup when you click on mutted
+
+
     // click to submit to the job popup
+    $('.short-info__button button, .full-info__button button').on('click', function (btn) {
+        let job_name;
+
+        if ($(this).parent('div').hasClass('short-info__button')) {
+            job_name = $(this).parent('.short-info__button').siblings('.short-info__title').text();
+        } else {
+            job_name = $(this).parent('.full-info__button').parent('.job-popup__full-info').siblings('.job-popup__short-info').find('.short-info__title').text();
+        }
+
+
+        showForm();
+
+        $('.form-feedback__input-job input').val(job_name);
+        $('.form-feedback__input-job input').addClass('not-empty');
+        $('.form-feedback__input-job input').focus();
+        $('.form-feedback__input-job input').blur();
+    });
+
+    $('.welcome__info-button button, .student-questionnaire__link a, .footer__top-button button').on('click', function (el) {
+        el.preventDefault();
+        showForm();
+    });
+
+
+    function showForm() {
+        $('.popup-wrapper').removeClass('vacancies__jobs-slider--show');
+        $('.form-feedback__wrapper').addClass('form-feedback__wrapper--show');
+        $('.form-feedback__wrapper').css('top', $(window).scrollTop())
+        $('body').addClass('mutted')
+    };
+
+
+    checkCookies();
 });
-
-
 
 
 function addBorderDiv(input) {
@@ -349,6 +393,41 @@ function addBorderDiv(input) {
 function removeBorderDiv(input) {
     $(input).parent('.form-feedback__input').removeClass('form-feedback__input--focus')
 };
+
+
+
+// cookies
+function checkCookies() {
+    let cookieDate = localStorage.getItem('cookieDate');
+    let cookieNotification = document.querySelector('.coockie');
+    let cookieBtn = cookieNotification.querySelector('.coockie__button button');
+
+    if (!cookieDate || (+cookieDate + 31536000000) < Date.now()) {
+        setTimeout(function () {
+            cookieNotification.classList.add('coockie--visible');
+        }, 5000)
+    }
+
+    cookieBtn.addEventListener('click', function () {
+        localStorage.setItem('cookieDate', Date.now());
+        cookieNotification.classList.remove('coockie--visible');
+    })
+}
+
+// close popup 
+function closePopup() {
+    let all_popups = document.querySelectorAll('.popup-wrapper');
+    all_popups.forEach(function (el) {
+        if (window.getComputedStyle(el).display !== 'none') {
+            $(el).removeClass('vacancies__jobs-slider--show');
+            $(el).removeClass('form-feedback__wrapper--show');
+            $(el).removeClass('all-done__popup--show');
+        }
+    });
+
+    $('body').removeClass('mutted');
+}
+
 
 // Checking and unblock send 
 function enabledButton() {
@@ -389,10 +468,18 @@ function enabledButton() {
                 $('.form-button__button').removeClass('form-button__button');
                 all_inputs.forEach(function (input) {
                     $(input).val('');
+                    $(input).focus();
+                    $(input).blur();
                     $(input).removeClass('not-empty');
                 });
-
                 enabledButton();
+
+                $('.form-feedback__wrapper').removeClass('form-feedback__wrapper--show');
+
+
+                $('.all-done__popup').addClass('all-done__popup--show');
+                console.log($('.all-done__popup').height());
+                $('.all-done__popup').css('top', $(window).scrollTop() + $('.all-done__popup').height() / 2)
             }, 5000)
 
         });

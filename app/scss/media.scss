@@ -1,5 +1,14 @@
 @import 'vars';
 
+@media (max-width: 1446px) {
+    .coockie__inner {
+        width: 100%;
+    }
+
+    .coockie {
+        bottom: 0;
+    }
+}
 
 @media (max-width: 1398px) {
 
@@ -70,6 +79,20 @@
     }
 }
 
+@media (max-width: 1318px) {
+
+    .close-popup {
+        width: 64px;
+        height: 64px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .popup-window {
+        // padding-top: 40px;
+    }
+
+}
 
 @media (max-width: 1223px) {
     .vacancies__item {
@@ -219,9 +242,16 @@
     }
 }
 
-
+@media (max-width: 1153px) {
+    .jobs-slider__inner {
+        width: 100%;
+    }
+}
 
 @media (max-width: 1147px) {
+
+
+
     .our-values__title {
         padding-top: 53px;
         margin-bottom: 50px;
@@ -237,6 +267,56 @@
     .positions__slider .prev-slide,
     .positions__slider .next-slide {
         top: 220px;
+    }
+}
+
+@media (max-width: 1144px) {
+    .close-popup {
+        position: static;
+        margin-left: auto;
+        margin-bottom: 21px;
+    }
+
+    .short-info__title {
+        font-size: 32px;
+        line-height: 37px;
+        margin-bottom: 54px;
+    }
+
+    .job-popup {
+        padding: 40px 40px 51px 40px;
+    }
+
+    .popup-window {
+        padding: 40px 40px 77px 40px;
+    }
+
+    .form-feedback__input-phone,
+    .form-feedback__input-email {
+        width: 49.7%;
+    }
+
+    .form-feedback__input-email {
+        margin-left: 1px;
+    }
+
+    .form-feedback__input-comment {
+        width: 100%;
+    }
+
+    .all-done__popup-inner {
+        width: 100%;
+        padding: 40px;
+        padding-bottom: 109px;
+        text-align: center;
+    }
+
+    .all-done__popup-close {
+        margin-bottom: 72px;
+    }
+
+    .popup-body__title {
+        margin-bottom: 43px;
     }
 }
 
@@ -296,7 +376,39 @@
 
 }
 
+@media (max-width: 1118px) {
+    .coockie__inner {
+        padding: 20px 40px;
+    }
+
+    .coockie__button {
+        padding-left: 10px;
+        width: 131px;
+        height: 52px;
+
+        button {
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+        }
+    }
+
+    .coockie__text {
+        font-size: 14px;
+    }
+}
+
+
 @media (max-width: 1006px) {
+
+    .header {
+        z-index: 12;
+    }
+
+    .links-social__items {
+        background-color: transparent;
+    }
+
     .header__links {
         position: absolute;
         left: 0;
@@ -437,6 +549,19 @@
 }
 
 
+
+@media (max-width: 985px) {
+
+    .form-feedback__input-phone,
+    .form-feedback__input-email {
+        width: 49.6%;
+    }
+
+    .form-feedback__input-email {
+        margin-left: 1px;
+    }
+}
+
 @media (max-width: 978px) {
     .student-questionnaire {
         margin-bottom: 60px;
@@ -552,6 +677,13 @@
 
 }
 
+@media (max-width: 870px) {
+    .short-info__title {
+        max-width: 576px;
+        width: 100%;
+    }
+}
+
 
 @media (max-width: 769px) {
     .vacancies__item:nth-child(2n) {
@@ -561,6 +693,21 @@
 
 
 @media (max-width: 768px) {
+    .coockie__inner {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .coockie__text {
+        margin-bottom: 20px;
+    }
+
+    .coockie__button {
+        padding-left: 0;
+        margin: 0 auto;
+    }
+
     .stories {
         margin-bottom: 95px;
     }
@@ -634,6 +781,21 @@
 
 @media (max-width: 766px) {
 
+    .vacancies__switcher {
+        display: none;
+    }
+
+    .vacancies__title {
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 32px;
+    }
+
+    .vacancies__switcher-mobile {
+        display: block;
+        margin-bottom: 32px;
+    }
+
     .vacancies__item-name {
         margin-bottom: 17px;
         width: 205px;
@@ -689,6 +851,94 @@
     }
 }
 
+@media (max-width: 713px) {
+    .job-popup {
+        padding: 20px;
+        padding-bottom: 52px;
+
+        .close-popup {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 24px;
+
+            svg {
+                width: 7px;
+                height: 7px;
+            }
+        }
+    }
+
+    .short-info__title {
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 28px;
+    }
+
+    .short-info__desk {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 29px;
+    }
+
+    .short-info__button {
+        display: none;
+    }
+
+    .job-popup__title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 22px;
+    }
+
+    .job-popup__decs {
+        margin-bottom: 40px;
+        padding-right: 20px;
+
+        li {
+            line-height: 20px;
+            font-size: 12px;
+            margin-bottom: 24px;
+
+            &::before {
+                top: 10px;
+            }
+        }
+    }
+
+    .full-info__conditions-items {
+        margin-bottom: 21px;
+    }
+
+    .full-info__date {
+        font-size: 11px;
+        line-height: 24px;
+        margin-bottom: 40px;
+    }
+
+    .full-info__button {
+        width: 270px;
+        height: 56px;
+        margin: 0 auto;
+
+        button {
+            padding: 18px 22px;
+        }
+    }
+
+}
+
+@media (max-width: 758px) {
+
+    .form-feedback__input-phone,
+    .form-feedback__input-email {
+        width: 100%;
+    }
+
+    .form-feedback__input-email {
+        margin-left: 0px;
+    }
+}
+
 @media (max-width: 728px) {
     .video-fluid__play {
         width: 56px;
@@ -729,6 +979,40 @@
 @media (max-width: 708px) {
     .student-questionnaire {
         display: none;
+    }
+
+    .all-done__popup-inner {
+        padding: 20px;
+        padding-bottom: 62px;
+    }
+
+    .all-done__popup-close {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 55px;
+
+        svg {
+            width: 7px;
+            height: 7px;
+        }
+    }
+
+    .popup-body__title {
+        font-size: 15px;
+        line-height: 17px;
+        margin-bottom: 26px;
+        @include f700;
+    }
+
+    .popup-body__decs {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: 695px) {
+    .coockie__text {
+        font-size: 12px;
     }
 }
 
@@ -794,6 +1078,174 @@
         margin-top: 3px;
         margin-bottom: 0;
     }
+}
+
+@media (max-width: 613px) {
+    .form-feedback__input-date {
+        width: 100%;
+    }
+
+    .form-feedback__input-file {
+        margin-left: 0;
+        margin-bottom: 32px;
+        width: 100%;
+    }
+
+    .form-feedback__input-comment {
+        display: none;
+    }
+
+    .jq-checkbox.checked {
+
+        &::before {
+            width: 7.5px;
+            height: 5px;
+        }
+    }
+
+    .form-feedback__form-button {
+        border: none;
+        padding: 0;
+        flex-wrap: wrap;
+
+        span {
+            margin-left: 11px;
+            font-size: 12px;
+            line-height: 13.5px;
+
+            a {
+                display: inline-block;
+            }
+        }
+
+        button {
+            height: 56px;
+            width: 100%;
+            display: block;
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    .form-button__checkbox {
+        width: 100%;
+        margin-bottom: 38px;
+    }
+
+    .form-feedback__title {
+        font-size: 18px;
+        line-height: 21px;
+        @include f700;
+        margin-bottom: 38px;
+    }
+
+    .close-popup {
+        width: 36px;
+        height: 36px;
+    }
+
+    .form-feedback__input {
+        // overflow: hidden;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 20px;
+
+        input {
+            font-size: 12px;
+            line-height: 14px;
+            padding: 16.8px 11px;
+            padding-right: 13px;
+            border-radius: 2px;
+        }
+
+        label {
+            font-size: 12px;
+            line-height: 15px;
+            left: 12px;
+        }
+
+        span {
+            font-size: 8px;
+            line-height: 10px;
+        }
+    }
+
+    .form-feedback__input--error span {
+        left: 5px;
+    }
+
+    .form-feedback__input-date {
+        border-radius: 2px;
+        overflow: hidden;
+
+        label {
+            top: 50%;
+            transform: translate(0, -50%);
+            pointer-events: all;
+        }
+    }
+
+    .form-feedback__form-button .jq-checkbox {
+        width: 18px;
+        height: 18px;
+    }
+
+    .form-feedback__input input.not-empty~label,
+    .form-feedback__input label.clicked,
+    .form-feedback__input input:focus~label {
+        left: 12px;
+        font-size: 9px;
+        line-height: 11px;
+    }
+
+    .popup-window {
+        padding: 20px;
+        padding-bottom: 42px;
+    }
+
+    .form-feedback__input-file .jq-file.changed .jq-file__name {
+        max-width: 165px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 0 auto;
+    }
+
+    .form-feedback__input-file {
+        padding: 16.8px 11px;
+        padding-left: 12px;
+        margin-bottom: 20px;
+        width: 96%;
+    }
+
+    .form-feedback__form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .form-feedback__input-file .input-file__trash {
+        right: 10px;
+    }
+
+    .form-feedback__input-phone,
+    .form-feedback__input-email {
+        height: 50px;
+
+        input {
+            height: auto;
+        }
+    }
+
+    .form-feedback__input-email {
+        .form-feedback__input-close {
+            top: 47%;
+        }
+
+    }
+
+
+
 }
 
 
@@ -940,5 +1392,16 @@
         img {
             width: 190px;
         }
+    }
+}
+
+@media (max-width: 350px) {
+    .popup-body__decs {
+        width: 190px;
+        margin: 0 auto;
+    }
+
+    .vacancies__switcher-mobile {
+        width: 274px;
     }
 }

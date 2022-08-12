@@ -89,40 +89,40 @@ gulp.task('script', function () {
 // svg спрайты
 gulp.task('svgsprite', function () {
 
-    return gulp.src('app/images/timeless_svg/*.svg') // svg files for sprite
-        .pipe(svgSprite({
-            shape: {
-                dimension: {
-                    maxWidth: 500,
-                    maxHeight: 500
-                },
-                spacing: {
-                    padding: 0
-                },
-                transform: [{
-                    "svgo": {
-                        "plugins": [
-                            // { removeViewBox: false },
-                            // { removeUnusedNS: false },
-                            // { removeUselessStrokeAndFill: true },
-                            // { cleanupIDs: false },
-                            // { removeComments: true },
-                            // { removeEmptyAttrs: true },
-                            // { removeEmptyText: true },
-                            // { collapseGroups: true },
-                            { removeAttrs: { attrs: '(fill|stroke|style)' } }
-                        ]
-                    }
-                }]
-            },
-            mode: {
-                stack: {
-                    sprite: "../sprite.svg"  //sprite file name
-                }
-            },
-        }
-        ))
-        .pipe(gulp.dest('app/images/svg_sprite'));
+    // return gulp.src('app/images/timeless_svg/*.svg') // svg files for sprite
+    //     .pipe(svgSprite({
+    //         shape: {
+    //             dimension: {
+    //                 maxWidth: 500,
+    //                 maxHeight: 500
+    //             },
+    //             spacing: {
+    //                 padding: 0
+    //             },
+    //             transform: [{
+    //                 "svgo": {
+    //                     "plugins": [
+    //                         // { removeViewBox: false },
+    //                         // { removeUnusedNS: false },
+    //                         // { removeUselessStrokeAndFill: true },
+    //                         // { cleanupIDs: false },
+    //                         // { removeComments: true },
+    //                         // { removeEmptyAttrs: true },
+    //                         // { removeEmptyText: true },
+    //                         // { collapseGroups: true },
+    //                         { removeAttrs: { attrs: '(fill|stroke|style)' } }
+    //                     ]
+    //                 }
+    //             }]
+    //         },
+    //         mode: {
+    //             stack: {
+    //                 sprite: "../sprite.svg"  //sprite file name
+    //             }
+    //         },
+    //     }
+    //     ))
+    //     .pipe(gulp.dest('app/images/svg_sprite'));
 
 
     // let config = {

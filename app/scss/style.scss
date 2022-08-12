@@ -15,6 +15,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 11;
 }
 
 .header__links {
@@ -298,6 +299,12 @@
     }
   }
 
+  &:hover .benefits__item-imagedinamic{
+    svg {
+      stroke: $orange;
+    }
+  }
+
   &:hover .benefits__item-desc span {
     opacity: 1;
     transition: max-height .5s;
@@ -308,6 +315,12 @@
 .benefits__items {
   display: flex;
   flex-wrap: wrap;
+}
+
+.benefits__item-imagedinamic {
+  svg {
+      stroke: $gray2;
+  }
 }
 
 .benefits__item-image {
@@ -874,6 +887,67 @@
   }
 }
 
+.vacancies__switcher-mobile {
+  width: 320px;
+  display: none;
+
+  .jq-selectbox {
+    min-width: 100%;
+    color: #828282;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #F2F2F2;
+    padding: 20px 16px;
+    padding-right: 34px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 26px;
+      right: 11px;
+      background-image: url(../images/svg_sprite/sprite.svg#select_arrow);
+      width: 6px;
+      height: 6px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .jq-selectbox__select-text {
+      width: 224px;
+    }
+    
+    select {
+      display: none;
+    }
+  }
+  
+  .jq-selectbox__dropdown {
+    min-width: 270px;
+    width: 300px;
+    top: 66px;
+    left: 2px;
+    background-color: #F2F2F2;
+
+    ul {
+      padding: 16px;
+    }
+
+    li {
+      // margin-bottom: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.082);
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 5px;
+    }
+
+    li:last-child {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+    }
+  }
+}
+
 // vacancies end
 // student questionnaire start
 
@@ -1299,6 +1373,7 @@
   font-size: 14px;
   line-height: 17px;
   color: #187CD3;
+  margin-bottom: 17px;
 }
 
 // footer end
@@ -1314,9 +1389,24 @@
   position: relative;
 }
 
-.form-feedback {
+// .form-feedback {
+//   display: none;
+// }
+
+.form-feedback__wrapper {
   display: none;
+  position: absolute;
+  top: 0;
+  z-index: 13;
+  width: 100%;
+
+
+  &--show {
+    display: block;
+  }
 }
+
+
 
 .form-feedback__inner {
   width: 100%;
@@ -1489,6 +1579,8 @@ input:-webkit-autofill {
   width: 226px;
   height: 70px;
   display: inline-block;
+  overflow: hidden;
+  display: inline-flex;
 
 
   input {
@@ -1578,16 +1670,18 @@ input:-webkit-autofill {
   line-height: 19px;
   color: #187CD3;
   padding: 25px 10px;
-  border-bottom: 1px solid #242627;
+  border-bottom: 1px solid #187CD3;
   position: relative;
 
   .jq-file {
     vertical-align: middle;
+    width: 100%;
 
     .jq-file__name {}
 
     .jq-file__browse {
       text-align: center;
+      width: 100%;
     }
   }
 
@@ -1886,7 +1980,7 @@ input:-webkit-autofill {
   top: 0;
   left: 50%;
   transform: translate(-50%);
-  z-index: 10;
+  z-index: 13;;
   width: 100%;
   display: none;
 
@@ -1944,3 +2038,86 @@ input:-webkit-autofill {
 }
 
 // job popup slider end 
+// all-done popup start 
+
+.all-done__popup {
+  width: 100%;
+  z-index: 13;;
+  position: absolute;
+  top: 0;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+}
+
+.all-done__popup-inner {
+  background-color: #fff;
+  width: 1145px;
+  padding: 112px 60px;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.popup-body__title {
+  margin-top: 7px;
+  margin-bottom: 46px;
+  font-size: 36px;
+  line-height: 42px;
+  color: #000;
+  @include f700;
+}
+
+.popup-body__decs {
+  font-size: 18px;
+  line-height: 23px;
+  color: #000;
+}
+
+// all-done popup end 
+// coockie start 
+.coockie {
+  width: 100%;
+  position: fixed;
+  bottom: 10px;
+  transform: translate(-100%);
+  transition: all .3s;
+  z-index: 13;;
+}
+
+.coockie--visible {
+  transform: translate(0);
+}
+
+.coockie__inner {
+  width: 1431px;
+  margin: 0 auto;
+  box-shadow: 0px 14px 24px rgba(15, 18, 20, 0.1);
+  border-radius: 2px;
+  padding: 30px 63px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.coockie__text {
+  width: 882px;
+  font-size: 16px;
+  line-height: 25px;
+
+  a {
+    color: #187CD3;
+  }
+}
+
+.coockie__button {
+  button {
+    width: 159px;
+    height: 64px;
+  }
+}
+
+// coockie end
