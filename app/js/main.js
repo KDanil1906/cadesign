@@ -278,23 +278,25 @@ $(function () {
     $('.form-feedback__input-close').on('click', function (item) {
         let input = $(this).siblings('input')
         $(input).val('');
-        console.log(input);
         $(input).removeClass('not-empty')
     });
 
     $('.form-button__button--disabled').on('click', function (e) {
         e.preventDefault();
-        console.log(e)
     });
 
 
     // jobs popup slider 
     $('.vacancies .item-button__tab').on('click', function (item) {
         item.preventDefault();
+
+        let popup = document.querySelector('.jobs-slider__inner');
         $('.vacancies__jobs-slider').addClass('vacancies__jobs-slider--show')
         $('body').addClass('mutted');
 
         $('.vacancies__jobs-slider').css('top', $(window).scrollTop())
+
+        clickOverPopup(popup, this);
 
         let id = $(this).attr('data-id');
         $('.vacancies .jobs-tab__item').removeClass('jobs-tab__item-active').hide();
@@ -360,25 +362,31 @@ $(function () {
         }
 
 
-        showForm();
+        showForm(this);
 
         $('.form-feedback__input-job input').val(job_name);
         $('.form-feedback__input-job input').addClass('not-empty');
         $('.form-feedback__input-job input').focus();
         $('.form-feedback__input-job input').blur();
+
+
+
     });
 
     $('.welcome__info-button button, .student-questionnaire__link a, .footer__top-button button').on('click', function (el) {
         el.preventDefault();
-        showForm();
+        showForm(this);
     });
 
 
-    function showForm() {
+    function showForm(button) {
+        let form = document.querySelector('.form-feedback');
         $('.popup-wrapper').removeClass('vacancies__jobs-slider--show');
         $('.form-feedback__wrapper').addClass('form-feedback__wrapper--show');
         $('.form-feedback__wrapper').css('top', $(window).scrollTop())
         $('body').addClass('mutted')
+
+        clickOverPopup(form, button);
     };
 
 
@@ -427,6 +435,18 @@ function closePopup() {
 
     $('body').removeClass('mutted');
 }
+
+
+function clickOverPopup(popup, button) {
+    document.addEventListener("click", function (e) {
+
+        if (e.target !== popup && !popup.contains(e.target) && e.target !== button && !button.contains(e.target)) {
+            closePopup();
+            document.removeEventListener('click', clickOverPopup);
+        }
+    });
+};
+
 
 
 // Checking and unblock send 
@@ -478,8 +498,10 @@ function enabledButton() {
 
 
                 $('.all-done__popup').addClass('all-done__popup--show');
-                console.log($('.all-done__popup').height());
                 $('.all-done__popup').css('top', $(window).scrollTop() + $('.all-done__popup').height() / 2)
+
+                let popup = document.querySelector('.all-done__popup-inner')
+                clickOverPopup(popup, this)
             }, 5000)
 
         });
