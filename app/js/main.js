@@ -389,7 +389,6 @@ $(function () {
         clickOverPopup(form, button);
     };
 
-
     checkCookies();
 });
 
@@ -446,7 +445,6 @@ function clickOverPopup(popup, button) {
         }
     });
 };
-
 
 
 // Checking and unblock send 
