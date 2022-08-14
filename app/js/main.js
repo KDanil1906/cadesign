@@ -103,13 +103,13 @@ $(function () {
     let mobile_nav = document.querySelector('.header__links');
     $(burger_button).on('click', function (item) {
         $(mobile_nav).slideToggle();
-        $('body').addClass('mutted');
+        $('html').addClass('mutted');
     });
 
     let close_moblie_nav = document.querySelector('.header__links-close');
     $(close_moblie_nav).on('click', function () {
         $(mobile_nav).slideToggle();
-        $('body').removeClass('mutted');
+        $('html').removeClass('mutted');
     });
 
     // video
@@ -292,55 +292,84 @@ $(function () {
 
         let popup = document.querySelector('.jobs-slider__inner');
         $('.vacancies__jobs-slider').addClass('vacancies__jobs-slider--show')
-        $('body').addClass('mutted');
+        $('html').addClass('mutted');
 
-        $('.vacancies__jobs-slider').css('top', $(window).scrollTop())
 
         clickOverPopup(popup, this);
 
         let id = $(this).attr('data-id');
         $('.vacancies .jobs-tab__item').removeClass('jobs-tab__item-active').hide();
-        $('.vacancies .vacancies__items-country').find('.item-button__tab').removeClass('item-button__tab--active');
+        $('.vacancies .vacancies__items-country').find('.item-button__tab--active').removeClass('item-button__tab--active');
         $(this).addClass('item-button__tab--active');
         $('#' + id).addClass('jobs-tab__item-active').fadeIn();
 
-        // switch-handling
+        let tab_item_class = 'jobs-tab__item';
+
+        switchPopupSlider(id, tab_item_class)
+
+    });
+
+    // story popup slider 
+    $('.slider-item__link-tab').on('click', function (item) {
+        item.preventDefault();
+
+        let popup = document.querySelector('.slider-tabcontent__inner');
+        $('.stories__slider-tabcontent').addClass('stories__slider-tabcontent--show')
+        $('html').addClass('mutted');
+
+        clickOverPopup(popup, this);
+
+        let id = $(this).attr('data-id');
+        $('.slider-tabcontent__tab-item').removeClass('slider-tabcontent__tab-item-active').hide();
+        $('.stories__slider-tabs').find('.slider-item__link-tab--active').removeClass('slider-item__link-tab--active');
+        $(this).addClass('slider-item__link-tab--active');
+        $('#' + id).addClass('slider-tabcontent__tab-item-active').fadeIn();
+
+        let tab_item_class = 'slider-tabcontent__tab-item';
+
+        switchPopupSlider(id, tab_item_class)
+
+    });
+
+    // switch-handling
+    function switchPopupSlider(id, class_item) {
         let identifier = id.split('-')[0]
-        let country_jobs_items = document.querySelectorAll(`.jobs-tab__item[id*=${identifier}]`);
+        let country_jobs_items = document.querySelectorAll(`.${class_item}[id*=${identifier}]`);
 
         if (country_jobs_items.length > 1) {
-            $('.jobs-slider__arrow-prev, .jobs-slider__arrow-next').addClass('jobs-slider__arrow--visible');
+            $('.popup-slider__arrow-prev, .popup-slider__arrow-next').addClass('popup-slider__arrow--visible');
 
-            $('.jobs-slider__arrow-prev, .jobs-slider__arrow-next').on('click', function (button) {
-                let what_if_btn = $(this).hasClass('jobs-slider__arrow-prev') ? 'prev' : 'next';
+            $('.popup-slider__arrow-prev, .popup-slider__arrow-next').on('click', function (button) {
+                let what_if_btn = $(this).hasClass('popup-slider__arrow-prev') ? 'prev' : 'next';
                 let active_tab_index;
                 country_jobs_items.forEach(function (item, index, array) {
-                    if ($(item).hasClass('jobs-tab__item-active')) {
+                    if ($(item).hasClass(`${class_item}-active`)) {
                         active_tab_index = index;
                     };
 
                 });
 
+
                 if (what_if_btn === 'next') {
                     if (active_tab_index < country_jobs_items.length - 1) {
-                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
-                        $(country_jobs_items[active_tab_index + 1]).addClass('jobs-tab__item-active').fadeIn();
+                        $(country_jobs_items[active_tab_index]).removeClass(`${class_item}-active`).hide();
+                        $(country_jobs_items[active_tab_index + 1]).addClass(`${class_item}-active`).fadeIn();
                     } else {
-                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
-                        $(country_jobs_items[0]).addClass('jobs-tab__item-active').fadeIn();
+                        $(country_jobs_items[active_tab_index]).removeClass(`${class_item}-active`).hide();
+                        $(country_jobs_items[0]).addClass(`${class_item}-active`).fadeIn();
                     }
                 } else if (what_if_btn === 'prev') {
                     if (active_tab_index > 0) {
-                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
-                        $(country_jobs_items[active_tab_index - 1]).addClass('jobs-tab__item-active').fadeIn();
+                        $(country_jobs_items[active_tab_index]).removeClass(`${class_item}-active`).hide();
+                        $(country_jobs_items[active_tab_index - 1]).addClass(`${class_item}-active`).fadeIn();
                     } else {
-                        $(country_jobs_items[active_tab_index]).removeClass('jobs-tab__item-active').hide();
-                        $(country_jobs_items[country_jobs_items.length - 1]).addClass('jobs-tab__item-active').fadeIn();
+                        $(country_jobs_items[active_tab_index]).removeClass(`${class_item}-active`).hide();
+                        $(country_jobs_items[country_jobs_items.length - 1]).addClass(`${class_item}-active`).fadeIn();
                     }
                 }
             });
         }
-    });
+    };
 
     // Closing the popup window
     $('.close-popup, body.mutted').on('click', function () {
@@ -348,7 +377,7 @@ $(function () {
     });
 
 
-    // // hide any popup when you click on mutted
+    // hide any popup when you click on mutted
 
 
     // click to submit to the job popup
@@ -383,8 +412,7 @@ $(function () {
         let form = document.querySelector('.form-feedback');
         $('.popup-wrapper').removeClass('vacancies__jobs-slider--show');
         $('.form-feedback__wrapper').addClass('form-feedback__wrapper--show');
-        $('.form-feedback__wrapper').css('top', $(window).scrollTop())
-        $('body').addClass('mutted')
+        $('html').addClass('mutted')
 
         clickOverPopup(form, button);
     };
@@ -472,21 +500,20 @@ function closePopup() {
             $(el).removeClass('vacancies__jobs-slider--show');
             $(el).removeClass('form-feedback__wrapper--show');
             $(el).removeClass('all-done__popup--show');
+            $(el).removeClass('stories__slider-tabcontent--show');
         }
     });
 
-    $('body').removeClass('mutted');
+    $('html').removeClass('mutted');
 }
 
-
 function clickOverPopup(popup, button) {
-    document.addEventListener("click", function (e) {
 
+    document.onclick = function (e) {
         if (e.target !== popup && !popup.contains(e.target) && e.target !== button && !button.contains(e.target)) {
             closePopup();
-            document.removeEventListener('click', clickOverPopup);
         }
-    });
+    };
 };
 
 

@@ -8,7 +8,6 @@
 
 .header {
   border-bottom: 1px solid $gray;
-  margin-bottom: 36px;
   @include f400;
   background-color: #fff;
   z-index: 7;
@@ -299,7 +298,7 @@
     }
   }
 
-  &:hover .benefits__item-imagedinamic{
+  &:hover .benefits__item-imagedinamic {
     svg {
       stroke: $orange;
     }
@@ -319,7 +318,7 @@
 
 .benefits__item-imagedinamic {
   svg {
-      stroke: $gray2;
+    stroke: $gray2;
   }
 }
 
@@ -427,7 +426,8 @@
   padding: 118px 0 85px 0;
 }
 
-.slider-item__name {
+.slider-item__name,
+.history__name {
   font-size: 36px;
   @include f400;
   color: #242627;
@@ -613,7 +613,6 @@
   top: 0;
   min-width: 100%;
   overflow: hidden;
-  // height: 556px;
   height: 100%;
   width: auto;
   z-index: 0;
@@ -917,12 +916,12 @@
     .jq-selectbox__select-text {
       width: 224px;
     }
-    
+
     select {
       display: none;
     }
   }
-  
+
   .jq-selectbox__dropdown {
     min-width: 270px;
     width: 300px;
@@ -935,7 +934,6 @@
     }
 
     li {
-      // margin-bottom: 10px;
       border-top: 1px solid rgba(0, 0, 0, 0.082);
       padding-top: 8px;
       padding-bottom: 8px;
@@ -1054,7 +1052,7 @@
 // student questionnaire end
 // stories start
 
-.stories {
+.stories__wrapper {
   margin-bottom: 114px;
   position: relative;
 }
@@ -1065,6 +1063,7 @@
   line-height: 44.6px;
   color: $dark;
   margin-bottom: 41px;
+  max-width: 100%;
 
   &::before {
     content: '';
@@ -1164,7 +1163,6 @@
   }
 }
 
-
 .stories__slider {
   position: relative;
 }
@@ -1199,7 +1197,8 @@
   }
 }
 
-.slider-item__desc {
+.slider-item__desc,
+.history__desc {
   font-size: 22px;
   line-height: 32px;
   color: $dark;
@@ -1319,7 +1318,6 @@
 
 .top-social__item-face {
 
-  // width: 68px;
   svg {
     margin-top: 9px;
   }
@@ -1389,22 +1387,23 @@
   position: relative;
 }
 
-// .form-feedback {
-//   display: none;
-// }
-
 .form-feedback__wrapper {
   display: none;
-  position: absolute;
-  top: 0;
   z-index: 13;
   width: 100%;
+
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
 
 
   &--show {
     display: block;
   }
 }
+
 
 
 
@@ -1978,9 +1977,14 @@ input:-webkit-autofill {
 .vacancies__jobs-slider {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translate(-50%);
-  z-index: 13;;
+  z-index: 13;
+
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+
   width: 100%;
   display: none;
 
@@ -1995,7 +1999,7 @@ input:-webkit-autofill {
   margin: 0 auto;
 }
 
-.jobs-slider__arrow {
+.popup-slider__arrow {
   width: 52px;
   height: 94px;
   position: absolute;
@@ -2025,7 +2029,7 @@ input:-webkit-autofill {
   }
 }
 
-.jobs-slider__arrow-prev {
+.popup-slider__arrow-prev {
   left: -86px;
 
   svg {
@@ -2033,7 +2037,7 @@ input:-webkit-autofill {
   }
 }
 
-.jobs-slider__arrow-next {
+.popup-slider__arrow-next {
   right: -86px;
 }
 
@@ -2042,9 +2046,11 @@ input:-webkit-autofill {
 
 .all-done__popup {
   width: 100%;
-  z-index: 13;;
-  position: absolute;
-  top: 0;
+  z-index: 13;
+  
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
   display: none;
 
   &--show {
@@ -2084,7 +2090,8 @@ input:-webkit-autofill {
   bottom: 10px;
   transform: translate(-100%);
   transition: all .3s;
-  z-index: 13;;
+  z-index: 13;
+  ;
 }
 
 .coockie--visible {
@@ -2121,3 +2128,144 @@ input:-webkit-autofill {
 }
 
 // coockie end
+// history popup start
+
+.history-popup {
+  width: 100%;
+
+  &.popup-window {
+    padding: 0;
+  }
+}
+
+.slider-tabcontent__inner {
+  width: 1145px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.stories__slider-tabcontent {
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 12;
+  width: 100%;
+  display: none;
+
+
+  &--show {
+    display: block;
+  }
+}
+
+.about-person__name {
+  margin-bottom: 40px;
+
+  span {
+    margin-bottom: 40px;
+  }
+}
+
+.history-popup__about-person {
+  padding-bottom: 68px;
+  background-color: #F7F7F7;
+  padding: 68px 143px;
+  position: relative;
+  width: 100%;
+}
+
+.about-person__text {
+  width: 630px;
+}
+
+.about-person__photo {
+  position: absolute;
+  right: 79px;
+  bottom: 0;
+  width: 184px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.full-story__wrapper {
+  padding: 55px 142px 120px 142px;
+}
+
+.first-text__title {
+  color: #000;
+  @include f700;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.first-text__body {
+  font-size: 18px;
+  line-height: 34px;
+  margin-bottom: 32px;
+
+  span {
+    display: block;
+
+    &:first-child {
+      margin-bottom: 36px;
+    }
+  }
+
+}
+
+.full-story__image {
+  margin-bottom: 50px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.second-text__title {
+  margin-bottom: 32px;
+  @include f700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.second-text__body {
+  font-size: 18px;
+  line-height: 34px;
+
+  span {
+    margin-top: 39px;
+    display: block;
+    font-size: 16px;
+    padding: 42px;
+    background-color: rgba(233, 134, 42, 0.02);
+    ;
+    border: 1px solid #E9862A;
+    margin-bottom: 50px;
+  }
+}
+
+.third-text__title {
+  @include f700;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 34px;
+}
+
+.third-text__body {
+  font-size: 18px;
+  line-height: 34px;
+
+  span {
+    display: block;
+
+    &:first-child {
+      margin-bottom: 36px;
+    }
+  }
+}
+
+// history popup end

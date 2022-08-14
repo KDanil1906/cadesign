@@ -1,8 +1,9 @@
 html {
   box-sizing: border-box;
+  // overflow-x: hidden;
 }
 
-html, body {
+body, html {
   overflow-x: hidden;
 }
 
@@ -22,8 +23,9 @@ body {
   background-color: #fff;
 }
 
-body.mutted {
+html.mutted {
   position: relative;
+
   &::before {
     content: '';
     background: rgba(36, 38, 39, 0.84);
@@ -81,23 +83,23 @@ a {
   justify-content: center;
 
   li {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #E0E0E0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
 
-      button {
-          border: none;
-          background-color: transparent;
-          color: transparent;
-      }
+    button {
+      border: none;
+      background-color: transparent;
+      color: transparent;
+    }
 
-      &.slick-active {
-          background-color: $orange;
-      }
+    &.slick-active {
+      background-color: $orange;
+    }
 
-      &+li {
-          margin-left: 41px;
-      }
+    &+li {
+      margin-left: 41px;
+    }
   }
 }
