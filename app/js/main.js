@@ -70,6 +70,37 @@ $(function () {
         ]
     });
 
+    $('.our-values__items').slick({
+        arrows: false,
+        dots: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 1223,
+                settings: {
+                    arrows: false,
+                    dots: false,
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    swipeTpSlide: true,
+                }
+            },
+            {
+                breakpoint: 686,
+                settings: {
+                    arrows: false,
+                    dots: true,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+        ]
+    })
+
     // switch 
     let choice_country = $('.vacancies__switcher-country');
     let choice_all = $('.vacancies__switcher-all');

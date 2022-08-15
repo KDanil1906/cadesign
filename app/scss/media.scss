@@ -32,7 +32,6 @@
         width: 100%;
         padding: 0;
         padding-top: 50px;
-        // padding-bottom: 86px;
         text-align: center;
     }
 
@@ -80,6 +79,16 @@
 }
 
 @media (max-width: 1318px) {
+    .history-popup {
+        .close-popup {
+            top: 40px;
+            right: 40px;
+        }
+    }
+
+    .history-popup__about-person {
+        padding-top: 106px;
+    }
 
     .close-popup {
         width: 64px;
@@ -87,11 +96,6 @@
         top: 10px;
         right: 10px;
     }
-
-    .popup-window {
-        // padding-top: 40px;
-    }
-
 }
 
 @media (max-width: 1223px) {
@@ -182,7 +186,6 @@
     }
 
     .benefits__item {
-        // display: flex !important;
         background-color: #fff;
 
         &:hover {
@@ -199,10 +202,37 @@
 }
 
 @media (max-width: 1230px) {
-    .our-values__items {
-        overflow-x: scroll;
-        // width: 503px;
-        width: 100%;
+    .our-values {
+        .slick-track {
+            min-width: 1192px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            overflow: scroll;
+        }
+
+        .slick-slide {
+            max-width: 376px;
+
+            &+.slick-slide {
+                margin-left: 32px;
+            }
+        }
+
+        .our-values__item {
+            &+.our-values__item {
+                margin-left: 32px;
+            }
+        }
+
+        .slick-list.draggable {
+            min-width: 1192px;
+        }
+
+        .our-values__items {
+            overflow-x: scroll;
+        }
+
     }
 
     .our-values__item {
@@ -271,6 +301,18 @@
 }
 
 @media (max-width: 1144px) {
+    .slider-tabcontent__inner {
+        width: 100%;
+    }
+
+    .history-popup {
+        .close-popup {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+    }
+
     .close-popup {
         position: static;
         margin-left: auto;
@@ -398,8 +440,33 @@
     }
 }
 
+@media (max-width: 1023px) {
+    .full-story__wrapper {
+        padding: 40px;
+    }
+}
+
 
 @media (max-width: 1006px) {
+    .about-person__name {
+        font-size: 28px;
+        line-height: 28px;
+
+        span {
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+    .about-person__desc {
+        font-size: 18px;
+        line-height: 26px;
+        width: 467px;
+    }
+
+    .history-popup__about-person {
+        padding-top: 138px;
+    }
 
     .header {
         z-index: 12;
@@ -551,6 +618,9 @@
 
 
 @media (max-width: 985px) {
+    .stories__slider-tabcontent--show {
+        left: 0;
+    }
 
     .form-feedback__input-phone,
     .form-feedback__input-email {
@@ -663,6 +733,13 @@
     }
 }
 
+@media (max-width: 902px) {
+    .history-popup__about-person {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
 @media (max-width: 808px) {
     .welcome__info-title {
         font-size: 30px;
@@ -688,6 +765,38 @@
 @media (max-width: 769px) {
     .vacancies__item:nth-child(2n) {
         margin-left: 30px;
+    }
+
+    .first-text__title {
+        font-size: 28px;
+        line-height: 32px;
+        margin-bottom: 36px;
+    }
+
+    .first-text__body {
+        font-size: 16px;
+        line-height: 36px;
+    }
+
+    .second-text__title,
+    .third-text__title {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .second-text__body {
+        font-size: 16px;
+        line-height: 34px;
+
+        span {
+            font-size: 16px;
+            line-height: 34px;
+        }
+    }
+
+    .third-text__body {
+        font-size: 16px;
+        line-height: 34px;
     }
 }
 
@@ -849,6 +958,50 @@
     .vacancies__item:nth-child(2n) {
         margin-left: 0px;
     }
+}
+
+@media (max-width: 757px) {
+
+
+    .history-popup__about-person {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #fff;
+    }
+
+    .about-person__photo {
+        order: 0;
+        position: static;
+        bottom: none;
+        right: none;
+        z-index: 1;
+        width: 112px;
+        height: 112px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #F9F9F9;
+        margin: 0 auto;
+        margin-bottom: 49px;
+
+        img {
+            width: 117%;
+        }
+    }
+
+    .about-person__text {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-person__desc {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+
+    .about-person__photo {}
 }
 
 @media (max-width: 713px) {
@@ -1016,11 +1169,96 @@
     }
 }
 
+@media (max-width: 685px) {
+    .our-values {
+        .slick-track {
+            min-width: 1px;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow: visible;
+        }
+
+        .slick-slide {
+            max-width: 100%;
+            min-width: 100%;
+            text-align: center;
+
+            &+.slick-slide {
+                margin-left: 0px;
+            }
+        }
+
+        .our-values__item {
+            &+.our-values__item {
+                margin-left: 0px;
+            }
+        }
+
+        .slick-list.draggable {
+            max-width: 200px;
+            min-width: 100%;
+        }
+
+        .our-values__items {
+            overflow-x: visible;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .slick-dots {
+            margin-top: 30px;
+        }
+    }
+
+    .our-values__items {
+        padding-bottom: 29px;
+    }
+
+    .our-values__item {
+        height: 304px;
+        max-width: 280px;
+        min-width: 1px;
+    }
+}
+
+@media (max-width: 686px) {
+
+
+    .our-values__title {
+        font-size: 22px;
+        line-height: 28px;
+    }
+
+    .our-values__item {
+        padding: 37px 32px;
+        margin-bottom: 0;
+    }
+
+    .our-values__items {
+        overflow-x: hidden;
+    }
+
+    .our-values__item-decs {
+        font-size: 13px;
+        line-height: 24px;
+    }
+
+    .our-values__item-title {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+}
 
 
 @media (max-width: 652px) {
     .services {
         display: none;
+        margin-top: 42px;
+        margin-bottom: 29px;
     }
 }
 
@@ -1081,6 +1319,23 @@
 }
 
 @media (max-width: 613px) {
+    .full-story__wrapper {
+        padding: 20px;
+    }
+
+    .history-popup__about-person {
+        padding: 20px;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .history-popup {
+        .close-popup {
+            top: 20px;
+            right: 20px;
+        }
+    }
+
     .form-feedback__input-date {
         width: 100%;
     }
@@ -1145,7 +1400,6 @@
     }
 
     .form-feedback__input {
-        // overflow: hidden;
         height: 50px;
         width: 100%;
         margin-bottom: 20px;
@@ -1387,6 +1641,59 @@
 }
 
 @media (max-width: 508px) {
+    .full-story__image {
+        margin-bottom: 25px;
+    }
+
+    .first-text__title {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 36px;
+    }
+
+    .first-text__body {
+        font-size: 14px;
+        line-height: 20px;
+
+    }
+
+    .second-text__title,
+    .third-text__title {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 25px;
+    }
+
+    .second-text__body {
+        font-size: 14px;
+        line-height: 20px;
+
+        span {
+            font-size: 14px;
+            line-height: 20px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .third-text__body {
+        font-size: 14px;
+        line-height: 20px;
+
+    }
+
+    .about-person__name {
+        font-size: 20px;
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+    .about-person__desc {
+        font-size: 16px;
+    }
+
     .slider-item__photo {
 
         img {

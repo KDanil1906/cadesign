@@ -667,6 +667,11 @@
 // our-values start
 .our-values {
   background-color: #F2F2F2;
+
+  .slick-list.draggable {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .our-values__title {
@@ -706,6 +711,8 @@
   font-size: 16px;
   color: $gray2;
 }
+
+
 
 // our-values end
 // vacancies start
@@ -1877,6 +1884,7 @@ input:-webkit-autofill {
   position: absolute;
   right: -70px;
   top: 0;
+  z-index: 14;
   cursor: pointer;
 
   svg {
@@ -2047,7 +2055,7 @@ input:-webkit-autofill {
 .all-done__popup {
   width: 100%;
   z-index: 13;
-  
+
   position: fixed;
   top: 50%;
   transform: translate(0, -50%);
@@ -2200,6 +2208,7 @@ input:-webkit-autofill {
   @include f700;
   font-size: 36px;
   line-height: 42px;
+  margin-bottom: 36px;
 }
 
 .first-text__body {
